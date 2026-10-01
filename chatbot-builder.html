@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chatbot Builder — AI Maker Studio</title>
+  <meta name="description" content="Design conversational AI assistants with personas, skills and an embeddable chat widget.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/script.js"></script>
+</head>
+<body class="theme-chatbot">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav-bar">
+      <a class="brand" href="index.html"><img src="assets/img/favicon.svg" alt="" width="32" height="32"> AI Maker Studio</a>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#builders">Builders</a></li>
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="index.html#how-it-works">How it works</a></li>
+          <li><a href="index.html#start">Get started</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle theme">☀️</button>
+        <button class="icon-btn nav-toggle" type="button" data-nav-toggle aria-controls="site-nav" aria-expanded="false" aria-label="Toggle menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="builder-hero" aria-labelledby="page-title">
+      <div class="container builder-hero-inner">
+        <div>
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#builders">Builders</a></li>
+              <li aria-current="page">Chatbot Builder</li>
+            </ol>
+          </nav>
+          <span class="builder-icon" aria-hidden="true">💬</span>
+          <p class="eyebrow">Text &amp; chat</p>
+          <h1 id="page-title">Chatbot <span class="gradient-text">Builder</span></h1>
+          <p class="lead">Design a conversational assistant in minutes. Give it a personality, teach it skills, tune its creativity and drop the finished chat widget into any website.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#workspace">Start building</a>
+            <a class="btn btn-ghost" href="#templates">Browse templates</a>
+          </div>
+          <ul class="hero-meta">
+            <li>⏱ ~5 min setup</li>
+            <li>🌍 40+ languages</li>
+            <li>🔌 Embed anywhere</li>
+          </ul>
+        </div>
+        <aside class="hero-card" aria-label="Chatbot builder at a glance">
+          <h2>At a glance</h2>
+          <dl>
+            <div><dt>Templates</dt><dd>24</dd></div>
+            <div><dt>Avg. response</dt><dd>0.8s</dd></div>
+            <div><dt>Integrations</dt><dd>12</dd></div>
+            <div><dt>Satisfaction</dt><dd>96%</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section--tight" id="workspace" aria-labelledby="workspace-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">✦ Workspace</p>
+          <h2 id="workspace-title">Configure your chatbot</h2>
+          <p>Change the settings on the left and hit <strong>Generate</strong> to preview your assistant. You can even chat with it.</p>
+        </div>
+
+        <div class="workspace">
+          <form class="panel" data-builder="chatbot" data-output="#chat-window" data-result-tab="tab-preview" aria-labelledby="config-title">
+            <div class="panel-head"><h3 id="config-title">⚙️ Configuration</h3><span class="badge">Draft</span></div>
+            <div class="panel-body form-grid">
+              <div class="form-row">
+                <div class="field">
+                  <label for="botName">Bot name</label>
+                  <input id="botName" name="botName" type="text" value="Nova">
+                </div>
+                <div class="field">
+                  <label for="avatar">Avatar</label>
+                  <select id="avatar" name="avatar">
+                    <option value="🤖">🤖 Robot</option>
+                    <option value="🦉">🦉 Owl</option>
+                    <option value="🌟">🌟 Star</option>
+                    <option value="🧑‍💼">🧑‍💼 Agent</option>
+                  </select>
+                </div>
+              </div>
+              <div class="field">
+                <label for="role">Role / persona</label>
+                <input id="role" name="role" type="text" value="friendly customer support assistant">
+              </div>
+              <div class="field">
+                <label for="greeting">Greeting message</label>
+                <textarea id="greeting" name="greeting" rows="2">Hi there! 👋 I'm Nova. Ask me anything about your order.</textarea>
+              </div>
+              <fieldset>
+                <legend>Tone of voice</legend>
+                <div class="option-grid">
+                  <label class="option-card"><input type="radio" name="tone" value="friendly" checked><span class="emoji" aria-hidden="true">😊</span>Friendly</label>
+                  <label class="option-card"><input type="radio" name="tone" value="professional"><span class="emoji" aria-hidden="true">💼</span>Professional</label>
+                  <label class="option-card"><input type="radio" name="tone" value="playful"><span class="emoji" aria-hidden="true">🎉</span>Playful</label>
+                  <label class="option-card"><input type="radio" name="tone" value="concise"><span class="emoji" aria-hidden="true">⚡</span>Concise</label>
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend>Skills</legend>
+                <label class="toggle">Answer FAQs <input type="checkbox" name="skills" value="answering FAQs" checked></label>
+                <label class="toggle">Track orders <input type="checkbox" name="skills" value="tracking orders" checked></label>
+                <label class="toggle">Book appointments <input type="checkbox" name="skills" value="booking appointments"></label>
+                <label class="toggle">Hand-off to human <input type="checkbox" name="skills" value="human hand-off"></label>
+              </fieldset>
+              <div class="form-row">
+                <div class="field">
+                  <label for="model">Model</label>
+                  <select id="model" name="model">
+                    <option value="ams-chat-pro">AMS Chat Pro</option>
+                    <option value="ams-chat-lite">AMS Chat Lite</option>
+                    <option value="ams-chat-reason">AMS Reasoner</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <div class="range-label"><label for="temperature">Creativity</label><output for="temperature"></output></div>
+                  <input id="temperature" name="temperature" type="range" min="0" max="100" value="70" data-suffix="%">
+                </div>
+              </div>
+              <div class="flex-between">
+                <button class="btn btn-ghost btn-sm" type="reset">Reset</button>
+                <button class="btn btn-primary" type="submit">✨ Generate chatbot</button>
+              </div>
+            </div>
+          </form>
+
+          <div class="panel" aria-labelledby="preview-title">
+            <div class="panel-head">
+              <span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <h3 id="preview-title">Output preview · <span id="chat-title">Nova</span></h3>
+              <span class="badge badge--success">● Online</span>
+            </div>
+            <div class="panel-body">
+              <div class="status-line" data-status><span class="status-dot"></span><span class="status-text">Ready</span></div>
+              <div class="progress mt-1"><span data-progress></span></div>
+              <div class="tabs mt-1">
+                <div role="tablist" aria-label="Preview views">
+                  <button role="tab" id="tab-preview" aria-controls="panel-preview" aria-selected="true" type="button">💬 Live chat</button>
+                  <button role="tab" id="tab-embed" aria-controls="panel-embed" aria-selected="false" type="button">🧩 Embed code</button>
+                  <button role="tab" id="tab-analytics" aria-controls="panel-analytics" aria-selected="false" type="button">📈 Analytics</button>
+                </div>
+                <div role="tabpanel" id="panel-preview" aria-labelledby="tab-preview">
+                  <div class="preview-surface">
+                    <div class="chat-window" id="chat-window" aria-live="polite"></div>
+                    <form class="chat-input" data-chat-form>
+                      <label class="visually-hidden" for="chat-message">Message</label>
+                      <input id="chat-message" type="text" placeholder="Type a message to test your bot…" autocomplete="off">
+                      <button class="btn btn-primary btn-sm" type="submit">Send</button>
+                    </form>
+                  </div>
+                </div>
+                <div role="tabpanel" id="panel-embed" aria-labelledby="tab-embed" hidden>
+                  <div class="flex-between code-head">
+                    <span class="muted">Paste this snippet before <code>&lt;/body&gt;</code></span>
+                    <button class="btn btn-ghost btn-sm" type="button" data-copy="#embed-code">Copy</button>
+                  </div>
+                  <pre class="code-block" id="embed-code"></pre>
+                </div>
+                <div role="tabpanel" id="panel-analytics" aria-labelledby="tab-analytics" hidden>
+                  <div class="score-grid">
+                    <div class="score"><span>Conversations</span><strong>1,284</strong></div>
+                    <div class="score"><span>Resolved</span><strong>87%</strong></div>
+                    <div class="score"><span>Avg. CSAT</span><strong>4.8★</strong></div>
+                    <div class="score"><span>Hand-offs</span><strong>42</strong></div>
+                  </div>
+                  <p class="muted mt-1">Sample analytics shown for demonstration purposes.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="templates" aria-labelledby="templates-title">
+      <div class="container">
+        <div class="toolbar">
+          <div>
+            <p class="eyebrow">✦ Templates</p>
+            <h2 id="templates-title">Start from a template</h2>
+          </div>
+          <div class="chip-group" role="group" aria-label="Filter templates" data-filter-group="#template-grid">
+            <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="chip" type="button" data-filter="support" aria-pressed="false">Support</button>
+            <button class="chip" type="button" data-filter="sales" aria-pressed="false">Sales</button>
+            <button class="chip" type="button" data-filter="education" aria-pressed="false">Education</button>
+          </div>
+        </div>
+        <div class="grid grid-4" id="template-grid">
+          <article class="card template-card" data-category="support">
+            <div class="template-thumb" aria-hidden="true">🛟</div>
+            <h3>Support Hero</h3>
+            <p>Answers FAQs, tracks orders and escalates tricky cases.</p>
+            <div class="template-meta"><span class="badge badge--muted">Support</span>
+              <button class="btn btn-ghost btn-sm" type="button" data-template='{"botName":"Nova","avatar":"🤖","role":"friendly customer support assistant","greeting":"Hi there! 👋 I’m Nova. Ask me anything about your order.","tone":"friendly","skills":["answering FAQs","tracking orders","human hand-off"]}'>Use</button></div>
+          </article>
+          <article class="card template-card" data-category="sales">
+            <div class="template-thumb" aria-hidden="true">💼</div>
+            <h3>Sales Concierge</h3>
+            <p>Qualifies leads and books demo calls automatically.</p>
+            <div class="template-meta"><span class="badge badge--muted">Sales</span>
+              <button class="btn btn-ghost btn-sm" type="button" data-template='{"botName":"Max","avatar":"🧑‍💼","role":"sales concierge for a SaaS product","tone":"professional","greeting":"Welcome! I can help you find the right plan and book a demo.","skills":["answering FAQs","booking appointments"]}'>Use</button></div>
+          </article>
+          <article class="card template-card" data-category="education">
+            <div class="template-thumb" aria-hidden="true">🎓</div>
+            <h3>Study Buddy</h3>
+            <p>Explains concepts, quizzes students and tracks progress.</p>
+            <div class="template-meta"><span class="badge badge--muted">Education</span>
+              <button class="btn btn-ghost btn-sm" type="button" data-template='{"botName":"Owlbert","avatar":"🦉","role":"patient tutor for high-school students","tone":"playful","greeting":"Hoot hoot! Ready to learn something new today?","skills":["answering FAQs"]}'>Use</button></div>
+          </article>
+          <article class="card template-card" data-category="support sales">
+            <div class="template-thumb" aria-hidden="true">🛍️</div>
+            <h3>Shop Assistant</h3>
+            <p>Recommends products and helps with checkout questions.</p>
+            <div class="template-meta"><span class="badge badge--muted">E-commerce</span>
+              <button class="btn btn-ghost btn-sm" type="button" data-template='{"botName":"Stella","avatar":"🌟","role":"personal shopping assistant","tone":"concise","greeting":"Looking for something special? Tell me what you need.","skills":["answering FAQs","tracking orders"]}'>Use</button></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-labelledby="features-title">
+      <div class="container grid grid-2">
+        <div>
+          <p class="eyebrow">✦ Features</p>
+          <h2 id="features-title">Built for real conversations</h2>
+          <p class="muted">Everything you need to launch a helpful, on-brand assistant.</p>
+          <ul class="feature-list mt-1">
+            <li>Persona editor with tone presets and custom instructions</li>
+            <li>Knowledge base upload: PDFs, URLs and help-center articles</li>
+            <li>Human hand-off with full conversation context</li>
+            <li>Multilingual replies with automatic language detection</li>
+            <li>Embeddable widget, API and Slack / WhatsApp channels</li>
+          </ul>
+        </div>
+        <div class="grid grid-mini">
+          <article class="card"><span class="card-icon" aria-hidden="true">📚</span><h3>Knowledge</h3><p>Ground answers in your own docs.</p></article>
+          <article class="card"><span class="card-icon" aria-hidden="true">🎭</span><h3>Personas</h3><p>Switch personality in one click.</p></article>
+          <article class="card"><span class="card-icon" aria-hidden="true">🛡️</span><h3>Guardrails</h3><p>Block off-topic or unsafe replies.</p></article>
+          <article class="card"><span class="card-icon" aria-hidden="true">📈</span><h3>Insights</h3><p>Track resolution and satisfaction.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-labelledby="related-title">
+      <div class="container">
+        <div class="flex-between related-head">
+          <h2 id="related-title">Explore other builders</h2>
+          <a class="btn btn-ghost btn-sm" href="index.html">← Back to studio home</a>
+        </div>
+        <ul class="related-grid">
+          <li><a href="chatbot-builder.html" aria-current="page">💬 Chatbot</a></li>
+          <li><a href="image-builder.html">🎨 Image</a></li>
+          <li><a href="video-builder.html">🎬 Video</a></li>
+          <li><a href="agent-builder.html">🤖 Agent</a></li>
+          <li><a href="prompt-builder.html">✍️ Prompt</a></li>
+          <li><a href="app-builder.html">📱 App</a></li>
+          <li><a href="workflow-builder.html">⚡ Workflow</a></li>
+          <li><a href="voice-builder.html">🎙️ Voice</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html"><img src="assets/img/favicon.svg" alt="" width="32" height="32"> AI Maker Studio</a>
+          <p class="mt-1">A static showcase of AI builder tools. All demos run locally in your browser.</p>
+        </div>
+        <div>
+          <h2>Builders</h2>
+          <ul class="footer-cols">
+            <li><a href="chatbot-builder.html">Chatbot</a></li>
+            <li><a href="image-builder.html">Image</a></li>
+            <li><a href="video-builder.html">Video</a></li>
+            <li><a href="agent-builder.html">Agent</a></li>
+            <li><a href="prompt-builder.html">Prompt</a></li>
+            <li><a href="app-builder.html">App</a></li>
+            <li><a href="workflow-builder.html">Workflow</a></li>
+            <li><a href="voice-builder.html">Voice</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Studio</h2>
+          <ul>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="index.html#how-it-works">How it works</a></li>
+            <li><a href="https://github.com/jodaaisupport-commits/ai-maker-studio">Source on GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> AI Maker Studio. Demo UI — no real AI calls are made.</span>
+        <a href="#main">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

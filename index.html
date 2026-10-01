@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Maker Studio — Build anything with AI</title>
+  <meta name="description" content="AI Maker Studio is a hub of no-code AI builders: chatbots, images, videos, agents, prompts, apps, workflows and voices.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/script.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav-bar">
+      <a class="brand" href="index.html"><img src="assets/img/favicon.svg" alt="" width="32" height="32"> AI Maker Studio</a>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="index.html#builders">Builders</a></li>
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="index.html#how-it-works">How it works</a></li>
+          <li><a href="index.html#start">Get started</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle theme">☀️</button>
+        <button class="icon-btn nav-toggle" type="button" data-nav-toggle aria-controls="site-nav" aria-expanded="false" aria-label="Toggle menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-orbs" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="container">
+        <p class="hero-pill"><span class="badge">New</span> 8 AI builders in one studio — no code required</p>
+        <h1 id="hero-title">Build <span class="gradient-text">anything</span> with AI.<br>One studio. Every builder.</h1>
+        <p class="hero-lead">AI Maker Studio brings chatbots, image &amp; video generation, autonomous agents, prompt engineering, apps, workflows and voices together in a single, beautiful workspace.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#builders">Explore builders →</a>
+          <a class="btn btn-ghost" href="chatbot-builder.html">Start with a chatbot</a>
+        </div>
+
+        <ul class="icon-orbit">
+          <li><a href="chatbot-builder.html" title="Chatbot Builder" aria-label="Chatbot Builder">💬</a></li>
+          <li><a href="image-builder.html" title="Image Builder" aria-label="Image Builder">🎨</a></li>
+          <li><a href="video-builder.html" title="Video Builder" aria-label="Video Builder">🎬</a></li>
+          <li><a href="agent-builder.html" title="Agent Builder" aria-label="Agent Builder">🤖</a></li>
+          <li><a href="prompt-builder.html" title="Prompt Builder" aria-label="Prompt Builder">✍️</a></li>
+          <li><a href="app-builder.html" title="App Builder" aria-label="App Builder">📱</a></li>
+          <li><a href="workflow-builder.html" title="Workflow Builder" aria-label="Workflow Builder">⚡</a></li>
+          <li><a href="voice-builder.html" title="Voice Builder" aria-label="Voice Builder">🎙️</a></li>
+        </ul>
+
+        <ul class="hero-stats">
+          <li><strong>8</strong><span>AI builders</span></li>
+          <li><strong>120+</strong><span>Starter templates</span></li>
+          <li><strong>0</strong><span>Lines of code needed</span></li>
+          <li><strong>100%</strong><span>Static &amp; private</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Builders overview -->
+    <section class="section" id="builders" aria-labelledby="builders-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">✦ The builders</p>
+          <h2 id="builders-title">Pick a builder and start creating</h2>
+          <p>Every builder is its own focused workspace with templates, live configuration and an instant output preview.</p>
+        </div>
+
+        <div class="toolbar">
+          <div class="chip-group" role="group" aria-label="Filter builders by category" data-filter-group="#builder-grid">
+            <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="chip" type="button" data-filter="text" aria-pressed="false">Text &amp; chat</button>
+            <button class="chip" type="button" data-filter="media" aria-pressed="false">Media</button>
+            <button class="chip" type="button" data-filter="automation" aria-pressed="false">Automation</button>
+            <button class="chip" type="button" data-filter="product" aria-pressed="false">Product</button>
+          </div>
+          <div class="search-field">
+            <label class="visually-hidden" for="builder-search">Search builders</label>
+            <input id="builder-search" type="search" placeholder="Search builders…" data-search-target="#builder-grid" autocomplete="off">
+          </div>
+        </div>
+
+        <div class="grid grid-4" id="builder-grid" data-empty="#builder-empty">
+          <a class="builder-card theme-chatbot reveal" href="chatbot-builder.html" data-category="text">
+            <span class="builder-icon" aria-hidden="true">💬</span>
+            <h3>Chatbot Builder</h3>
+            <p>Design conversational assistants with personas, knowledge and an embeddable chat widget.</p>
+            <span class="card-foot"><span>Open builder</span><span aria-hidden="true">→</span></span>
+          </a>
+          <a class="builder-card theme-image reveal" href="image-builder.html" data-category="media">
+            <span class="builder-icon" aria-hidden="true">🎨</span>
+            <h3>Image Builder</h3>
+            <p>Turn prompts into artwork, product shots and illustrations in any style or aspect ratio.</p>
+            <span class="card-foot"><span>Open builder</span><span aria-hidden="true">→</span></span>
+          </a>
+          <a class="builder-card theme-video reveal" href="video-builder.html" data-category="media">
+            <span class="builder-icon" aria-hidden="true">🎬</span>
+            <h3>Video Builder</h3>
+            <p>Script, storyboard and render short-form videos with captions, music and voice-over.</p>
+            <span class="card-foot"><span>Open builder</span><span aria-hidden="true">→</span></span>
+          </a>
+          <a class="builder-card theme-agent reveal" href="agent-builder.html" data-category="automation text">
+            <span class="builder-icon" aria-hidden="true">🤖</span>
+            <h3>Agent Builder</h3>
+            <p>Assemble autonomous agents with goals, tools, memory and guardrails — then watch them work.</p>
+            <span class="card-foot"><span>Open builder</span><span aria-hidden="true">→</span></span>
+          </a>
+          <a class="builder-card theme-prompt reveal" href="prompt-builder.html" data-category="text">
+            <span class="builder-icon" aria-hidden="true">✍️</span>
+            <h3>Prompt Builder</h3>
+            <p>Engineer structured, reusable prompts with variables, techniques and quality scoring.</p>
+            <span class="card-foot"><span>Open builder</span><span aria-hidden="true">→</span></span>
+          </a>
+          <a class="builder-card theme-app reveal" href="app-builder.html" data-category="product">
+            <span class="builder-icon" aria-hidden="true">📱</span>
+            <h3>App Builder</h3>
+            <p>Describe an app, drag in components and preview a live mobile mock-up with generated code.</p>
+            <span class="card-foot"><span>Open builder</span><span aria-hidden="true">→</span></span>
+          </a>
+          <a class="builder-card theme-workflow reveal" href="workflow-builder.html" data-category="automation product">
+            <span class="builder-icon" aria-hidden="true">⚡</span>
+            <h3>Workflow Builder</h3>
+            <p>Connect triggers, AI steps and actions into automations that run on autopilot.</p>
+            <span class="card-foot"><span>Open builder</span><span aria-hidden="true">→</span></span>
+          </a>
+          <a class="builder-card theme-voice reveal" href="voice-builder.html" data-category="media">
+            <span class="builder-icon" aria-hidden="true">🎙️</span>
+            <h3>Voice Builder</h3>
+            <p>Create natural voices for narration, assistants and podcasts — preview them instantly.</p>
+            <span class="card-foot"><span>Open builder</span><span aria-hidden="true">→</span></span>
+          </a>
+        </div>
+        <p class="empty-state mt-1" id="builder-empty" hidden>No builder matches your search. Try another keyword.</p>
+      </div>
+    </section>
+
+    <!-- Feature highlights -->
+    <section class="section" id="features" aria-labelledby="features-title">
+      <div class="container">
+        <div class="section-head center">
+          <p class="eyebrow">✦ Why AI Maker Studio</p>
+          <h2 id="features-title">Everything you need to ship AI products</h2>
+          <p>A consistent, delightful experience across every builder — so you can move from idea to prototype in minutes.</p>
+        </div>
+        <div class="grid grid-3">
+          <article class="card reveal">
+            <span class="card-icon" aria-hidden="true">🧩</span>
+            <h3>Template-first</h3>
+            <p>Start from curated templates for every builder and customise only what matters.</p>
+          </article>
+          <article class="card reveal">
+            <span class="card-icon" aria-hidden="true">👀</span>
+            <h3>Live previews</h3>
+            <p>See chat replies, images, timelines and app screens update as you configure.</p>
+          </article>
+          <article class="card reveal">
+            <span class="card-icon" aria-hidden="true">🔗</span>
+            <h3>Composable builders</h3>
+            <p>Plug a prompt into an agent, an agent into a workflow, a voice into a video.</p>
+          </article>
+          <article class="card reveal">
+            <span class="card-icon" aria-hidden="true">🛡️</span>
+            <h3>Guardrails built in</h3>
+            <p>Content filters, approval steps and usage limits keep every creation safe.</p>
+          </article>
+          <article class="card reveal">
+            <span class="card-icon" aria-hidden="true">🚀</span>
+            <h3>One-click export</h3>
+            <p>Export embed snippets, code, JSON configs or media files from any builder.</p>
+          </article>
+          <article class="card reveal">
+            <span class="card-icon" aria-hidden="true">🌗</span>
+            <h3>Light &amp; dark</h3>
+            <p>A responsive, accessible interface that looks great on every screen and theme.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section section--tight" id="how-it-works" aria-labelledby="how-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">✦ How it works</p>
+          <h2 id="how-title">From idea to output in three steps</h2>
+        </div>
+        <ol class="grid grid-3 steps">
+          <li><div class="card reveal"><h3>Choose a builder</h3><p>Pick the tool that fits your idea — or combine several.</p></div></li>
+          <li><div class="card reveal"><h3>Configure &amp; iterate</h3><p>Use templates, sliders and toggles to shape the result in real time.</p></div></li>
+          <li><div class="card reveal"><h3>Generate &amp; share</h3><p>Preview the output, copy the code and publish it anywhere.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" id="start" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta-band reveal">
+          <h2 id="cta-title">Ready to make something amazing?</h2>
+          <p>Jump into any builder below. Everything runs in your browser — no sign-up, no backend.</p>
+          <div class="hero-actions">
+            <a class="btn btn-light" href="agent-builder.html">Build an agent</a>
+            <a class="btn btn-ghost" href="image-builder.html">Generate images</a>
+            <a class="btn btn-ghost" href="workflow-builder.html">Automate a workflow</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html"><img src="assets/img/favicon.svg" alt="" width="32" height="32"> AI Maker Studio</a>
+          <p class="mt-1">A static showcase of AI builder tools. All demos run locally in your browser.</p>
+        </div>
+        <div>
+          <h2>Builders</h2>
+          <ul class="footer-cols">
+            <li><a href="chatbot-builder.html">Chatbot</a></li>
+            <li><a href="image-builder.html">Image</a></li>
+            <li><a href="video-builder.html">Video</a></li>
+            <li><a href="agent-builder.html">Agent</a></li>
+            <li><a href="prompt-builder.html">Prompt</a></li>
+            <li><a href="app-builder.html">App</a></li>
+            <li><a href="workflow-builder.html">Workflow</a></li>
+            <li><a href="voice-builder.html">Voice</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Studio</h2>
+          <ul>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="index.html#how-it-works">How it works</a></li>
+            <li><a href="https://github.com/jodaaisupport-commits/ai-maker-studio">Source on GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> AI Maker Studio. Demo UI — no real AI calls are made.</span>
+        <a href="#main">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

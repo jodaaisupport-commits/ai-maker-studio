@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agent Builder — AI Maker Studio</title>
+  <meta name="description" content="Assemble autonomous AI agents with goals, tools, memory and guardrails.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/script.js"></script>
+</head>
+<body class="theme-agent">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav-bar">
+      <a class="brand" href="index.html"><img src="assets/img/favicon.svg" alt="" width="32" height="32"> AI Maker Studio</a>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#builders">Builders</a></li>
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="index.html#how-it-works">How it works</a></li>
+          <li><a href="index.html#start">Get started</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle theme">☀️</button>
+        <button class="icon-btn nav-toggle" type="button" data-nav-toggle aria-controls="site-nav" aria-expanded="false" aria-label="Toggle menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="builder-hero" aria-labelledby="page-title">
+      <div class="container builder-hero-inner">
+        <div>
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#builders">Builders</a></li>
+              <li aria-current="page">Agent Builder</li>
+            </ol>
+          </nav>
+          <span class="builder-icon" aria-hidden="true">🤖</span>
+          <p class="eyebrow">Automation</p>
+          <h1 id="page-title">Agent <span class="gradient-text">Builder</span></h1>
+          <p class="lead">Assemble autonomous AI agents that plan, use tools and remember. Define a goal, grant capabilities and guardrails, then watch your agent reason through the task step by step.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#workspace">Assemble an agent</a>
+            <a class="btn btn-ghost" href="#templates">Agent templates</a>
+          </div>
+          <ul class="hero-meta">
+            <li>🧠 Multi-step planning</li>
+            <li>🛠 20+ tools</li>
+            <li>🛡 Human approval</li>
+          </ul>
+        </div>
+        <aside class="hero-card" aria-label="Agent builder at a glance">
+          <h2>At a glance</h2>
+          <dl>
+            <div><dt>Tools</dt><dd>23</dd></div>
+            <div><dt>Active agents</dt><dd>3.1k</dd></div>
+            <div><dt>Tasks done</dt><dd>540k</dd></div>
+            <div><dt>Success rate</dt><dd>92%</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section--tight" id="workspace" aria-labelledby="workspace-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">✦ Workspace</p>
+          <h2 id="workspace-title">Design your agent</h2>
+          <p>Give your agent a goal and the tools it may use. Press <strong>Run agent</strong> to simulate a full reasoning loop.</p>
+        </div>
+
+        <div class="workspace">
+          <form class="panel" data-builder="agent" data-output="#agent-log" data-result-tab="tab-run" aria-labelledby="config-title">
+            <div class="panel-head"><h3 id="config-title">🧩 Agent blueprint</h3><span class="badge">v1</span></div>
+            <div class="panel-body form-grid">
+              <div class="field">
+                <label for="agentName">Agent name</label>
+                <input id="agentName" name="agentName" type="text" value="Scout">
+              </div>
+              <div class="field">
+                <label for="goal">Goal</label>
+                <textarea id="goal" name="goal" rows="3">Research the top 5 competitors in the plant-based snack market and summarise their pricing.</textarea>
+              </div>
+              <fieldset>
+                <legend>Tools &amp; capabilities</legend>
+                <div class="option-grid">
+                  <label class="option-card"><input type="checkbox" name="tools" value="web-search" checked><span class="emoji" aria-hidden="true">🌐</span>Web search</label>
+                  <label class="option-card"><input type="checkbox" name="tools" value="browser" checked><span class="emoji" aria-hidden="true">🧭</span>Browser</label>
+                  <label class="option-card"><input type="checkbox" name="tools" value="code-interpreter"><span class="emoji" aria-hidden="true">🐍</span>Code</label>
+                  <label class="option-card"><input type="checkbox" name="tools" value="spreadsheet" checked><span class="emoji" aria-hidden="true">📊</span>Sheets</label>
+                  <label class="option-card"><input type="checkbox" name="tools" value="email"><span class="emoji" aria-hidden="true">📧</span>Email</label>
+                  <label class="option-card"><input type="checkbox" name="tools" value="calendar"><span class="emoji" aria-hidden="true">📅</span>Calendar</label>
+                </div>
+              </fieldset>
+              <div class="form-row">
+                <div class="field">
+                  <label for="model">Reasoning model</label>
+                  <select id="model" name="model">
+                    <option value="ams-reasoner">AMS Reasoner</option>
+                    <option value="ams-reasoner-mini">AMS Reasoner Mini</option>
+                    <option value="ams-chat-pro">AMS Chat Pro</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="memory">Memory</label>
+                  <select id="memory" name="memory">
+                    <option value="short-term">Short-term</option>
+                    <option value="long-term vector">Long-term (vector)</option>
+                    <option value="none">None</option>
+                  </select>
+                </div>
+              </div>
+              <div class="field">
+                <div class="range-label"><label for="autonomy">Max iterations</label><output for="autonomy"></output></div>
+                <input id="autonomy" name="autonomy" type="range" min="1" max="10" value="5">
+              </div>
+              <label class="toggle">Ask before taking actions <input type="checkbox" name="guardrails" value="approval" checked></label>
+              <label class="toggle">Restrict to trusted domains <input type="checkbox" name="guardrails" value="domains"></label>
+              <div class="flex-between">
+                <button class="btn btn-ghost btn-sm" type="reset">Reset</button>
+                <button class="btn btn-primary" type="submit">▶ Run agent</button>
+              </div>
+            </div>
+          </form>
+
+          <div class="panel" aria-labelledby="preview-title">
+            <div class="panel-head">
+              <span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <h3 id="preview-title">Execution trace</h3>
+              <span class="badge badge--muted">Sandbox</span>
+            </div>
+            <div class="panel-body">
+              <div class="status-line" data-status><span class="status-dot"></span><span class="status-text">Idle · press “Run agent”</span></div>
+              <div class="progress mt-1"><span data-progress></span></div>
+              <div class="tabs mt-1">
+                <div role="tablist" aria-label="Preview views">
+                  <button role="tab" id="tab-run" aria-controls="panel-run" aria-selected="true" type="button">🧠 Run</button>
+                  <button role="tab" id="tab-config" aria-controls="panel-config" aria-selected="false" type="button">🧾 Config JSON</button>
+                </div>
+                <div role="tabpanel" id="panel-run" aria-labelledby="tab-run">
+                  <div class="agent-graph" role="group" aria-label="Agent loop">
+                    <div class="agent-node"><span class="emoji" aria-hidden="true">🎯</span>Goal</div>
+                    <span class="agent-arrow" aria-hidden="true">→</span>
+                    <div class="agent-node"><span class="emoji" aria-hidden="true">🧠</span>Plan</div>
+                    <span class="agent-arrow" aria-hidden="true">→</span>
+                    <div class="agent-node"><span class="emoji" aria-hidden="true">🛠</span>Act</div>
+                    <span class="agent-arrow" aria-hidden="true">→</span>
+                    <div class="agent-node"><span class="emoji" aria-hidden="true">💾</span>Remember</div>
+                    <span class="agent-arrow" aria-hidden="true">→</span>
+                    <div class="agent-node"><span class="emoji" aria-hidden="true">📄</span>Report</div>
+                  </div>
+                  <ol class="log" id="agent-log" aria-live="polite">
+                    <li>Waiting for a goal… configure your agent and press “Run agent”.</li>
+                  </ol>
+                </div>
+                <div role="tabpanel" id="panel-config" aria-labelledby="tab-config" hidden>
+                  <div class="flex-between code-head">
+                    <span class="muted">Portable agent definition</span>
+                    <button class="btn btn-ghost btn-sm" type="button" data-copy="#agent-json">Copy</button>
+                  </div>
+<pre class="code-block" id="agent-json">{
+  <span class="k">"name"</span>: <span class="s">"Scout"</span>,
+  <span class="k">"model"</span>: <span class="s">"ams-reasoner"</span>,
+  <span class="k">"tools"</span>: [<span class="s">"web-search"</span>, <span class="s">"browser"</span>, <span class="s">"spreadsheet"</span>],
+  <span class="k">"memory"</span>: <span class="s">"short-term"</span>,
+  <span class="k">"max_iterations"</span>: <span class="n">5</span>,
+  <span class="k">"guardrails"</span>: { <span class="k">"approval"</span>: <span class="n">true</span> }
+}</pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="templates" aria-labelledby="templates-title">
+      <div class="container">
+        <div class="toolbar">
+          <div>
+            <p class="eyebrow">✦ Templates</p>
+            <h2 id="templates-title">Ready-made agents</h2>
+          </div>
+          <div class="chip-group" role="group" aria-label="Filter templates" data-filter-group="#template-grid">
+            <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="chip" type="button" data-filter="research" aria-pressed="false">Research</button>
+            <button class="chip" type="button" data-filter="ops" aria-pressed="false">Operations</button>
+            <button class="chip" type="button" data-filter="dev" aria-pressed="false">Developer</button>
+          </div>
+        </div>
+        <div class="grid grid-4" id="template-grid">
+          <article class="card template-card" data-category="research">
+            <div class="template-thumb" aria-hidden="true">🔬</div>
+            <h3>Market Researcher</h3>
+            <p>Finds competitors, pricing and trends, then writes a brief.</p>
+            <div class="template-meta"><span class="badge badge--muted">Research</span>
+              <button class="btn btn-ghost btn-sm" type="button" data-template='{"agentName":"Scout","goal":"Research the top 5 competitors in the plant-based snack market and summarise their pricing.","tools":["web-search","browser","spreadsheet"],"memory":"short-term","autonomy":"5"}'>Use</button></div>
+          </article>
+          <article class="card template-card" data-category="ops">
+            <div class="template-thumb" aria-hidden="true">📥</div>
+            <h3>Inbox Zero</h3>
+            <p>Triage email, draft replies and schedule follow-ups.</p>
+            <div class="template-meta"><span class="badge badge--muted">Operations</span>
+              <button class="btn btn-ghost btn-sm" type="button" data-template='{"agentName":"Mailroom","goal":"Sort today’s inbox, draft replies to urgent messages and book follow-up meetings.","tools":["email","calendar"],"memory":"long-term vector","autonomy":"8"}'>Use</button></div>
+          </article>
+          <article class="card template-card" data-category="dev">
+            <div class="template-thumb" aria-hidden="true">🐛</div>
+            <h3>Bug Hunter</h3>
+            <p>Reproduces issues, runs code and proposes a fix.</p>
+            <div class="template-meta"><span class="badge badge--muted">Developer</span>
+              <button class="btn btn-ghost btn-sm" type="button" data-template='{"agentName":"Debuggy","goal":"Reproduce the reported CSV import bug, find the root cause and suggest a patch.","tools":["code-interpreter","web-search"],"memory":"short-term","autonomy":"10"}'>Use</button></div>
+          </article>
+          <article class="card template-card" data-category="research ops">
+            <div class="template-thumb" aria-hidden="true">✈️</div>
+            <h3>Trip Planner</h3>
+            <p>Plans itineraries, compares prices and fills your calendar.</p>
+            <div class="template-meta"><span class="badge badge--muted">Personal</span>
+              <button class="btn btn-ghost btn-sm" type="button" data-template='{"agentName":"Atlas","goal":"Plan a 4-day trip to Lisbon under 900 EUR including flights, hotel and food tips.","tools":["web-search","browser","calendar"],"memory":"short-term","autonomy":"6"}'>Use</button></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-labelledby="features-title">
+      <div class="container grid grid-2">
+        <div>
+          <p class="eyebrow">✦ Features</p>
+          <h2 id="features-title">Autonomy with control</h2>
+          <p class="muted">Powerful agents that stay transparent, safe and auditable.</p>
+          <ul class="feature-list mt-1">
+            <li>Visual planner showing every thought, tool call and result</li>
+            <li>Plug-in tools: web, code, files, email, calendar and APIs</li>
+            <li>Short- and long-term memory with vector search</li>
+            <li>Approval gates, budgets and domain allow-lists</li>
+            <li>Multi-agent teams with hand-offs between specialists</li>
+          </ul>
+        </div>
+        <div class="grid grid-mini">
+          <article class="card"><span class="card-icon" aria-hidden="true">🗺️</span><h3>Planner</h3><p>Breaks big goals into steps.</p></article>
+          <article class="card"><span class="card-icon" aria-hidden="true">🔌</span><h3>Tool hub</h3><p>Connect any REST API.</p></article>
+          <article class="card"><span class="card-icon" aria-hidden="true">👥</span><h3>Teams</h3><p>Agents that collaborate.</p></article>
+          <article class="card"><span class="card-icon" aria-hidden="true">📜</span><h3>Audit log</h3><p>Every action is traceable.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="section section--tight" aria-labelledby="related-title">
+      <div class="container">
+        <div class="flex-between related-head">
+          <h2 id="related-title">Explore other builders</h2>
+          <a class="btn btn-ghost btn-sm" href="index.html">← Back to studio home</a>
+        </div>
+        <ul class="related-grid">
+          <li><a href="chatbot-builder.html">💬 Chatbot</a></li>
+          <li><a href="image-builder.html">🎨 Image</a></li>
+          <li><a href="video-builder.html">🎬 Video</a></li>
+          <li><a href="agent-builder.html" aria-current="page">🤖 Agent</a></li>
+          <li><a href="prompt-builder.html">✍️ Prompt</a></li>
+          <li><a href="app-builder.html">📱 App</a></li>
+          <li><a href="workflow-builder.html">⚡ Workflow</a></li>
+          <li><a href="voice-builder.html">🎙️ Voice</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html"><img src="assets/img/favicon.svg" alt="" width="32" height="32"> AI Maker Studio</a>
+          <p class="mt-1">A static showcase of AI builder tools. All demos run locally in your browser.</p>
+        </div>
+        <div>
+          <h2>Builders</h2>
+          <ul class="footer-cols">
+            <li><a href="chatbot-builder.html">Chatbot</a></li>
+            <li><a href="image-builder.html">Image</a></li>
+            <li><a href="video-builder.html">Video</a></li>
+            <li><a href="agent-builder.html">Agent</a></li>
+            <li><a href="prompt-builder.html">Prompt</a></li>
+            <li><a href="app-builder.html">App</a></li>
+            <li><a href="workflow-builder.html">Workflow</a></li>
+            <li><a href="voice-builder.html">Voice</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Studio</h2>
+          <ul>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="index.html#how-it-works">How it works</a></li>
+            <li><a href="https://github.com/jodaaisupport-commits/ai-maker-studio">Source on GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> AI Maker Studio. Demo UI — no real AI calls are made.</span>
+        <a href="#main">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
