@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Video Builder — AI Maker Studio</title>
+  <meta name="description" content="Script, storyboard and render short-form videos with captions, music and voice-over.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/script.js"></script>
+</head>
+<body class="theme-video">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav-bar">
+      <a class="brand" href="index.html"><img src="assets/img/favicon.svg" alt="" width="32" height="32"> AI Maker Studio</a>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#builders">Builders</a></li>
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="index.html#how-it-works">How it works</a></li>
+          <li><a href="index.html#start">Get started</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle theme">☀️</button>
+        <button class="icon-btn nav-toggle" type="button" data-nav-toggle aria-controls="site-nav" aria-expanded="false" aria-label="Toggle menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="builder-hero" aria-labelledby="page-title">
+      <div class="container builder-hero-inner">
+        <div>
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#builders">Builders</a></li>
+              <li aria-current="page">Video Builder</li>
+            </ol>
+          </nav>
+          <span class="builder-icon" aria-hidden="true">🎬</span>
+          <p class="eyebrow">Media</p>
+          <h1 id="page-title">Video <span class="gradient-text">Builder</span></h1>
+          <p class="lead">Go from script to screen. Write or generate a script, let AI storyboard the scenes, then add captions, music and a voice-over — all on a familiar timeline.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#workspace">Start a video</a>
+            <a class="btn btn-ghost" href="#templates">Browse formats</a>
+          </div>
+          <ul class="hero-meta">
+            <li>🎞 Up to 60 fps</li>
+            <li>💬 Auto captions</li>
+            <li>📐 Every social format</li>
+          </ul>
+        </div>
+        <aside class="hero-card" aria-label="Video builder at a glance">
+          <h2>At a glance</h2>
+          <dl>
+            <div><dt>Formats</dt><dd>6</dd></div>
+            <div><dt>Stock clips</dt><dd>2M+</dd></div>
+            <div><dt>Music tracks</dt><dd>9k</dd></div>
+            <div><dt>Avg. render</dt><dd>38s</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section--tight" id="workspace" aria-labelledby="workspace-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">✦ Workspace</p>
+          <h2 id="workspace-title">Storyboard your video</h2>
+          <p>Each line of your script becomes a scene caption. Press <strong>Render</strong> to rebuild the timeline.</p>
+        </div>
+
+        <div class="workspace">
+          <form class="panel" data-builder="video" data-output="#video-stage" data-result-tab="tab-timeline" aria-labelledby="config-title">
+            <div class="panel-head"><h3 id="config-title">🎬 Project settings</h3><span class="badge">Timeline</span></div>
+            <div class="panel-body form-grid">
+              <div class="field">
+                <label for="title">Video title</label>
+                <input id="title" name="title" type="text" value="Launch Day: Meet Our New App">
+              </div>
+              <div class="field">
+                <label for="script">Script (one line per scene)</label>
+                <textarea id="script" name="script" rows="4">Tired of juggling ten tools?
+Meet the app that does it all.
+Plan, create and share in seconds.
+Download free today.</textarea>
+              </div>
+              <div class="form-row">
+                <div class="field">
+                  <label for="format">Format</label>
+                  <select id="format" name="format">
+                    <option value="16:9">16:9 YouTube</option>
+                    <option value="9:16">9:16 Reels / TikTok</option>
+                    <option value="1:1">1:1 Feed</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="vstyle">Visual style</label>
+                  <select id="vstyle" name="vstyle">
+                    <option value="cinematic">Cinematic</option>
+                    <option value="motion graphics">Motion graphics</option>
+                    <option value="documentary">Documentary</option>
+                    <option value="animated">Animated</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="field">
+                  <div class="range-label"><label for="duration">Duration</label><output for="duration"></output></div>
+                  <input id="duration" name="duration" type="range" min="10" max="59" value="30" data-suffix="s">
+                </div>
+                <div class="field">
+                  <div class="range-label"><label for="scenes">Scenes</label><output for="scenes"></output></div>
+                  <input id="scenes" name="scenes" type="range" min="2" max="6" value="4">
+                </div>
+              </div>
+              <div class="field">
+                <label for="music">Background music</label>
+                <select id="music" name="music">
+                  <option value="Upbeat pop">Upbeat pop</option>
+                  <option value="Ambient">Ambient</option>
+                  <option value="Epic orchestral">Epic orchestral</option>
+                  <option value="Lo-fi beats">Lo-fi beats</option>
+                </select>
+              </div>
+              <label class="toggle">AI voice-over <input type="checkbox" name="voiceover" value="on" checked></label>
+              <label class="toggle">Burn-in captions <input type="checkbox" name="captions" value="on" checked></label>
+              <div class="flex-between">
+                <button class="btn btn-ghost btn-sm" type="reset">Reset</button>
+                <button class="btn btn-primary" type="submit">🎥 Render video</button>
+              </div>
+            </div>
+          </form>
+
+          <div class="panel" aria-labelledby="preview-title">
+            <div class="panel-head">
+              <span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <h3 id="preview-title">Output preview</h3>
+              <span class="badge badge--muted">MP4 · 1080p</span>
+            </div>
+            <div class="panel-body">
+              <div class="status-line" data-status><span class="status-dot"></span><span class="status-text">Ready</span></div>
+              <div class="progress mt-1"><span data-progress></span></div>
+              <div class="tabs mt-1">
+                <div role="tablist" aria-label="Preview views">
+                  <button role="tab" id="tab-timeline" aria-controls="panel-timeline" aria-selected="true" type="button">🎞 Player &amp; timeline</button>
+                  <button role="tab" id="tab-storyboard" aria-controls="panel-storyboard" aria-selected="false" type="button">🗂 Storyboard</button>
+                </div>
+                <div role="tabpanel" id="panel-timeline" aria-labelledby="tab-timeline">
+                  <div class="video-stage" id="video-stage">
+                    <span class="rec">● PREVIEW</span>
+                    <div class="scene-title">
+                      <button class="play" type="button" aria-label="Play preview">▶</button>
+                      <strong id="video-title">Launch Day</strong>
+                      <span id="video-sub">16:9 · cinematic · 30s</span>
+                    </div>
+                    <span class="timecode" id="video-time">00:00 / 00:30</span>
+                  </div>
+                  <div class="timeline" role="group" aria-label="Timeline">
+                    <div class="track" id="track-video"><span class="track-label">Video</span></div>
+                    <div class="track" id="track-text"><span class="track-label">Text</span></div>
+                    <div class="track" id="track-audio"><span class="track-label">Audio</span></div>
+                  </div>
+                </div>
+                <div role="tabpanel" id="panel-storyboard" aria-labelledby="tab-storyboard" hidden>
+                  <div class="grid grid-mini">
+                    <article class="card"><span class="card-icon" aria-hidden="true">🌆</span><h3>Scene 1 · Hook</h3><p>Fast cuts of a busy desk, frustrated user.</p></article>
+                    <article class="card"><span class="card-icon" aria-hidden="true">✨</span><h3>Scene 2 · Reveal</h3><p>Logo animation with light sweep.</p></article>
+                    <article class="card"><span class="card-icon" aria-hidden="true">📲</span><h3>Scene 3 · Demo</h3><p>Screen recording with zoom-ins.</p></article>
+                    <article class="card"><span class="card-icon" aria-hidden="true">🎯</span><h3>Scene 4 · CTA</h3><p>App store badges and tagline.</p></article>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="templates" aria-labelledby="templates-title">
+      <div class="container">
+        <div class="toolbar">
+          <div>
+            <p class="eyebrow">✦ Templates</p>
+            <h2 id="templates-title">Video formats</h2>
+          </div>
+          <div class="chip-group" role="group" aria-label="Filter templates" data-filter-group="#template-grid">
+            <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="chip" type="button" data-filter="social" aria-pressed="false">Social</button>
+            <button class="chip" type="button" data-filter="business" aria-pressed="false">Business</button>
+            <button class="chip" type="button" data-filter="learning" aria-pressed="false">Learning</button>
+          </div>
+        </div>
+        <div class="grid grid-4" id="template-grid">
+          <article class="card template-card" data-category="social">
+            <div class="template-thumb" aria-hidden="true">📲</div>
+            <h3>Viral Short</h3>
+            <p>Punchy 15-second vertical clip with bold captions.</p>
+            <div class="template-meta"><span class="badge badge--muted">Social</span>
+              <button class="btn btn-ghost btn-sm" type="button" data-template='{"title":"3 Tricks You Didn’t Know","format":"9:16","vstyle":"motion graphics","duration":"15","scenes":"3","music":"Upbeat pop","script":"Trick #1 will blow your mind\nTrick #2 saves hours\nFollow for more!"}'>Use</button></div>
+          </article>
+          <article class="card template-card" data-category="business">
+            <div class="template-thumb" aria-hidden="true">🚀</div>
+            <h3>Product Launch</h3>
+            <p>Cinematic teaser for your next big release.</p>
+            <div class="template-meta"><span class="badge badge--muted">Business</span>
+              <button class="btn btn-ghost btn-sm" type="button" data-template='{"title":"Introducing Aurora","format":"16:9","vstyle":"cinematic","duration":"45","scenes":"5","music":"Epic orchestral","script":"Something new is coming\nDesigned for creators\nPowered by AI\nBuilt for speed\nAvailable now"}'>Use</button></div>
+          </article>
+          <article class="card template-card" data-category="learning">
+            <div class="template-thumb" aria-hidden="true">🧑‍🏫</div>
+            <h3>Explainer</h3>
+            <p>Clear, animated walkthrough of a concept or feature.</p>
+            <div class="template-meta"><span class="badge badge--muted">Learning</span>
+              <button class="btn btn-ghost btn-sm" type="button" data-template='{"title":"How Neural Networks Learn","format":"16:9","vstyle":"animated","duration":"59","scenes":"6","music":"Lo-fi beats","script":"What is a neuron?\nLayers stack up\nWeights get adjusted\nLoss goes down\nPredictions improve\nNow you know!"}'>Use</button></div>
+          </article>
+          <article class="card template-card" data-category="business social">
+            <div class="template-thumb" aria-hidden="true">⭐</div>
+            <h3>Testimonial</h3>
+            <p>Square customer story for feeds and ads.</p>
+            <div class="template-meta"><span class="badge badge--muted">Business</span>
+              <button class="btn btn-ghost btn-sm" type="button" data-template='{"title":"Why Lena Loves Us","format":"1:1","vstyle":"documentary","duration":"30","scenes":"4","music":"Ambient","script":"Meet Lena, a bakery owner\nShe needed more time\nNow orders run themselves\nJoin 10,000 happy owners"}'>Use</button></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-labelledby="features-title">
+      <div class="container grid grid-2">
+        <div>
+          <p class="eyebrow">✦ Features</p>
+          <h2 id="features-title">Your AI film crew</h2>
+          <p class="muted">Scriptwriter, editor, sound designer and caption artist — in one builder.</p>
+          <ul class="feature-list mt-1">
+            <li>Script-to-storyboard with automatic scene detection</li>
+            <li>Text-to-video clips and 2M+ licensed stock assets</li>
+            <li>Auto captions in 50+ languages with styling presets</li>
+            <li>Beat-synced cuts and royalty-free music library</li>
+            <li>Export to MP4, GIF or straight to social platforms</li>
+          </ul>
+        </div>
+        <div class="grid grid-mini">
+          <article class="card"><span class="card-icon" aria-hidden="true">📝</span><h3>Script AI</h3><p>Generate hooks and full scripts.</p></article>
+          <article class="card"><span class="card-icon" aria-hidden="true">✂️</span><h3>Smart cuts</h3><p>Trim silences and filler words.</p></article>
+          <article class="card"><span class="card-icon" aria-hidden="true">🎵</span><h3>Soundtrack</h3><p>Music that matches the mood.</p></article>
+          <article class="card"><span class="card-icon" aria-hidden="true">🌐</span><h3>Dubbing</h3><p>Translate and re-voice instantly.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="section section--tight" aria-labelledby="related-title">
+      <div class="container">
+        <div class="flex-between related-head">
+          <h2 id="related-title">Explore other builders</h2>
+          <a class="btn btn-ghost btn-sm" href="index.html">← Back to studio home</a>
+        </div>
+        <ul class="related-grid">
+          <li><a href="chatbot-builder.html">💬 Chatbot</a></li>
+          <li><a href="image-builder.html">🎨 Image</a></li>
+          <li><a href="video-builder.html" aria-current="page">🎬 Video</a></li>
+          <li><a href="agent-builder.html">🤖 Agent</a></li>
+          <li><a href="prompt-builder.html">✍️ Prompt</a></li>
+          <li><a href="app-builder.html">📱 App</a></li>
+          <li><a href="workflow-builder.html">⚡ Workflow</a></li>
+          <li><a href="voice-builder.html">🎙️ Voice</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html"><img src="assets/img/favicon.svg" alt="" width="32" height="32"> AI Maker Studio</a>
+          <p class="mt-1">A static showcase of AI builder tools. All demos run locally in your browser.</p>
+        </div>
+        <div>
+          <h2>Builders</h2>
+          <ul class="footer-cols">
+            <li><a href="chatbot-builder.html">Chatbot</a></li>
+            <li><a href="image-builder.html">Image</a></li>
+            <li><a href="video-builder.html">Video</a></li>
+            <li><a href="agent-builder.html">Agent</a></li>
+            <li><a href="prompt-builder.html">Prompt</a></li>
+            <li><a href="app-builder.html">App</a></li>
+            <li><a href="workflow-builder.html">Workflow</a></li>
+            <li><a href="voice-builder.html">Voice</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Studio</h2>
+          <ul>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="index.html#how-it-works">How it works</a></li>
+            <li><a href="https://github.com/jodaaisupport-commits/ai-maker-studio">Source on GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> AI Maker Studio. Demo UI — no real AI calls are made.</span>
+        <a href="#main">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

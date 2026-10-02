@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>App Builder — AI Maker Studio</title>
+  <meta name="description" content="Describe an app, assemble components and preview a live mobile mock-up with generated code.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/script.js"></script>
+</head>
+<body class="theme-app">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav-bar">
+      <a class="brand" href="index.html"><img src="assets/img/favicon.svg" alt="" width="32" height="32"> AI Maker Studio</a>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#builders">Builders</a></li>
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="index.html#how-it-works">How it works</a></li>
+          <li><a href="index.html#start">Get started</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle theme">☀️</button>
+        <button class="icon-btn nav-toggle" type="button" data-nav-toggle aria-controls="site-nav" aria-expanded="false" aria-label="Toggle menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="builder-hero" aria-labelledby="page-title">
+      <div class="container builder-hero-inner">
+        <div>
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#builders">Builders</a></li>
+              <li aria-current="page">App Builder</li>
+            </ol>
+          </nav>
+          <span class="builder-icon" aria-hidden="true">📱</span>
+          <p class="eyebrow">Product</p>
+          <h1 id="page-title">App <span class="gradient-text">Builder</span></h1>
+          <p class="lead">Describe the app you want and assemble it from smart components. See a live mobile preview as you build, then export clean, production-ready code.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#workspace">Build an app</a>
+            <a class="btn btn-ghost" href="#templates">App templates</a>
+          </div>
+          <ul class="hero-meta">
+            <li>📲 iOS, Android &amp; web</li>
+            <li>🧱 40+ components</li>
+            <li>💾 Code export</li>
+          </ul>
+        </div>
+        <aside class="hero-card" aria-label="App builder at a glance">
+          <h2>At a glance</h2>
+          <dl>
+            <div><dt>Components</dt><dd>42</dd></div>
+            <div><dt>Platforms</dt><dd>3</dd></div>
+            <div><dt>Apps shipped</dt><dd>7.9k</dd></div>
+            <div><dt>Time to MVP</dt><dd>1 day</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section--tight" id="workspace" aria-labelledby="workspace-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">✦ Workspace</p>
+          <h2 id="workspace-title">Assemble your app</h2>
+          <p>Toggle components and colours — the phone preview updates instantly. Press <strong>Generate app</strong> to produce the code.</p>
+        </div>
+
+        <div class="workspace">
+          <form class="panel" data-builder="app" data-output="#phone-body" data-result-tab="tab-code" aria-labelledby="config-title">
+            <div class="panel-head"><h3 id="config-title">🧱 App settings</h3><span class="badge">Live</span></div>
+            <div class="panel-body form-grid">
+              <div class="field">
+                <label for="appName">App name</label>
+                <input id="appName" name="appName" type="text" value="FitPal">
+              </div>
+              <div class="field">
+                <label for="description">Describe your app</label>
+                <textarea id="description" name="description" rows="2">A fitness tracker with workout plans, progress charts and an AI coach.</textarea>
+              </div>
+              <fieldset>
+                <legend>Brand colour</legend>
+                <div class="swatches">
+                  <label class="swatch"><input type="radio" name="color" value="#3b82f6" checked><span style="background:#3b82f6"></span><span class="visually-hidden">Blue</span></label>
+                  <label class="swatch"><input type="radio" name="color" value="#8b5cf6"><span style="background:#8b5cf6"></span><span class="visually-hidden">Violet</span></label>
+                  <label class="swatch"><input type="radio" name="color" value="#10b981"><span style="background:#10b981"></span><span class="visually-hidden">Green</span></label>
+                  <label class="swatch"><input type="radio" name="color" value="#f97316"><span style="background:#f97316"></span><span class="visually-hidden">Orange</span></label>
+                  <label class="swatch"><input type="radio" name="color" value="#ec4899"><span style="background:#ec4899"></span><span class="visually-hidden">Pink</span></label>
+                  <label class="swatch"><input type="radio" name="color" value="#111827"><span style="background:#111827"></span><span class="visually-hidden">Black</span></label>
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend>Components</legend>
+                <div class="option-grid">
+                  <label class="option-card"><input type="checkbox" name="components" value="hero" checked><span class="emoji" aria-hidden="true">🖼</span>Hero</label>
+                  <label class="option-card"><input type="checkbox" name="components" value="chart" checked><span class="emoji" aria-hidden="true">📊</span>Chart</label>
+                  <label class="option-card"><input type="checkbox" name="components" value="list" checked><span class="emoji" aria-hidden="true">📋</span>List</label>
+                  <label class="option-card"><input type="checkbox" name="components" value="chat"><span class="emoji" aria-hidden="true">💬</span>AI chat</label>
+                  <label class="option-card"><input type="checkbox" name="components" value="form"><span class="emoji" aria-hidden="true">📝</span>Form</label>
+                  <label class="option-card"><input type="checkbox" name="components" value="map"><span class="emoji" aria-hidden="true">🗺</span>Map</label>
+                  <label class="option-card"><input type="checkbox" name="components" value="payments"><span class="emoji" aria-hidden="true">💳</span>Payments</label>
+                </div>
+              </fieldset>
+              <div class="field">
+                <label for="platform">Target platform</label>
+                <select id="platform" name="platform">
+                  <option value="iOS + Android">iOS + Android</option>
+                  <option value="web">Web (PWA)</option>
+                  <option value="iOS">iOS only</option>
+                </select>
+              </div>
+              <div class="flex-between">
+                <button class="btn btn-ghost btn-sm" type="reset">Reset</button>
+                <button class="btn btn-primary" type="submit">🚀 Generate app</button>
+              </div>
+            </div>
+          </form>
+
+          <div class="panel" aria-labelledby="preview-title">
+            <div class="panel-head">
+              <span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <h3 id="preview-title">Output preview</h3>
+              <span class="badge badge--success">● Hot reload</span>
+            </div>
+            <div class="panel-body">
+              <div class="status-line" data-status><span class="status-dot"></span><span class="status-text">Ready · preview updates live</span></div>
+              <div class="progress mt-1"><span data-progress></span></div>
+              <div class="app-canvas mt-1">
+                <div class="tabs">
+                  <div role="tablist" aria-label="Preview views">
+                    <button role="tab" id="tab-layers" aria-controls="panel-layers" aria-selected="true" type="button">🧱 Layers</button>
+                    <button role="tab" id="tab-code" aria-controls="panel-code" aria-selected="false" type="button">💻 Code</button>
+                  </div>
+                  <div role="tabpanel" id="panel-layers" aria-labelledby="tab-layers">
+                    <ul class="component-list" id="component-list"></ul>
+                  </div>
+                  <div role="tabpanel" id="panel-code" aria-labelledby="tab-code" hidden>
+                    <div class="flex-between code-head">
+                      <span class="muted">React Native</span>
+                      <button class="btn btn-ghost btn-sm" type="button" data-copy="#app-code">Copy</button>
+                    </div>
+                    <pre class="code-block" id="app-code"></pre>
+                  </div>
+                </div>
+                <div class="phone" id="phone" aria-label="Mobile app preview" role="img">
+                  <div class="phone-screen">
+                    <div class="phone-bar" id="phone-title">FitPal</div>
+                    <div class="phone-body" id="phone-body"></div>
+                    <div class="phone-tabs" aria-hidden="true"><span>🏠</span><span>📊</span><span>💬</span><span>👤</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="templates" aria-labelledby="templates-title">
+      <div class="container">
+        <div class="toolbar">
+          <div>
+            <p class="eyebrow">✦ Templates</p>
+            <h2 id="templates-title">App starters</h2>
+          </div>
+          <div class="chip-group" role="group" aria-label="Filter templates" data-filter-group="#template-grid">
+            <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="chip" type="button" data-filter="consumer" aria-pressed="false">Consumer</button>
+            <button class="chip" type="button" data-filter="business" aria-pressed="false">Business</button>
+            <button class="chip" type="button" data-filter="commerce" aria-pressed="false">Commerce</button>
+          </div>
+        </div>
+        <div class="grid grid-4" id="template-grid">
+          <article class="card template-card" data-category="consumer">
+            <div class="template-thumb" aria-hidden="true">🏋️</div>
+            <h3>Fitness Tracker</h3>
+            <p>Workouts, progress charts and an AI coach.</p>
+            <div class="template-meta"><span class="badge badge--muted">Consumer</span>
+              <button class="btn btn-ghost btn-sm" type="button" data-template='{"appName":"FitPal","color":"#3b82f6","components":["hero","chart","list"],"platform":"iOS + Android"}'>Use</button></div>
+          </article>
+          <article class="card template-card" data-category="commerce">
+            <div class="template-thumb" aria-hidden="true">🛒</div>
+            <h3>Mini Shop</h3>
+            <p>Product list, cart and secure checkout.</p>
+            <div class="template-meta"><span class="badge badge--muted">Commerce</span>
+              <button class="btn btn-ghost btn-sm" type="button" data-template='{"appName":"ShopLite","color":"#f97316","components":["hero","list","payments"],"platform":"web"}'>Use</button></div>
+          </article>
+          <article class="card template-card" data-category="business">
+            <div class="template-thumb" aria-hidden="true">🧾</div>
+            <h3>Field Service</h3>
+            <p>Job list, map routes and inspection forms.</p>
+            <div class="template-meta"><span class="badge badge--muted">Business</span>
+              <button class="btn btn-ghost btn-sm" type="button" data-template='{"appName":"FieldPro","color":"#10b981","components":["list","map","form"],"platform":"iOS + Android"}'>Use</button></div>
+          </article>
+          <article class="card template-card" data-category="consumer business">
+            <div class="template-thumb" aria-hidden="true">🤖</div>
+            <h3>AI Companion</h3>
+            <p>A chat-first app with your own AI assistant.</p>
+            <div class="template-meta"><span class="badge badge--muted">Consumer</span>
+              <button class="btn btn-ghost btn-sm" type="button" data-template='{"appName":"Buddy","color":"#8b5cf6","components":["hero","chat"],"platform":"iOS"}'>Use</button></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-labelledby="features-title">
+      <div class="container grid grid-2">
+        <div>
+          <p class="eyebrow">✦ Features</p>
+          <h2 id="features-title">From idea to app store</h2>
+          <p class="muted">Design, wire up data and ship — without a single line of boilerplate.</p>
+          <ul class="feature-list mt-1">
+            <li>Text-to-app: describe screens and get a working layout</li>
+            <li>Drag-and-drop components with responsive defaults</li>
+            <li>Built-in auth, database and AI chat blocks</li>
+            <li>Live device preview with hot reload</li>
+            <li>Export React Native, Flutter or HTML code</li>
+          </ul>
+        </div>
+        <div class="grid grid-mini">
+          <article class="card"><span class="card-icon" aria-hidden="true">🔐</span><h3>Auth</h3><p>Login flows out of the box.</p></article>
+          <article class="card"><span class="card-icon" aria-hidden="true">🗄️</span><h3>Data</h3><p>Tables, sync and offline mode.</p></article>
+          <article class="card"><span class="card-icon" aria-hidden="true">🎨</span><h3>Theming</h3><p>Brand colours everywhere.</p></article>
+          <article class="card"><span class="card-icon" aria-hidden="true">📦</span><h3>Export</h3><p>Own your source code.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="section section--tight" aria-labelledby="related-title">
+      <div class="container">
+        <div class="flex-between related-head">
+          <h2 id="related-title">Explore other builders</h2>
+          <a class="btn btn-ghost btn-sm" href="index.html">← Back to studio home</a>
+        </div>
+        <ul class="related-grid">
+          <li><a href="chatbot-builder.html">💬 Chatbot</a></li>
+          <li><a href="image-builder.html">🎨 Image</a></li>
+          <li><a href="video-builder.html">🎬 Video</a></li>
+          <li><a href="agent-builder.html">🤖 Agent</a></li>
+          <li><a href="prompt-builder.html">✍️ Prompt</a></li>
+          <li><a href="app-builder.html" aria-current="page">📱 App</a></li>
+          <li><a href="workflow-builder.html">⚡ Workflow</a></li>
+          <li><a href="voice-builder.html">🎙️ Voice</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html"><img src="assets/img/favicon.svg" alt="" width="32" height="32"> AI Maker Studio</a>
+          <p class="mt-1">A static showcase of AI builder tools. All demos run locally in your browser.</p>
+        </div>
+        <div>
+          <h2>Builders</h2>
+          <ul class="footer-cols">
+            <li><a href="chatbot-builder.html">Chatbot</a></li>
+            <li><a href="image-builder.html">Image</a></li>
+            <li><a href="video-builder.html">Video</a></li>
+            <li><a href="agent-builder.html">Agent</a></li>
+            <li><a href="prompt-builder.html">Prompt</a></li>
+            <li><a href="app-builder.html">App</a></li>
+            <li><a href="workflow-builder.html">Workflow</a></li>
+            <li><a href="voice-builder.html">Voice</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Studio</h2>
+          <ul>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="index.html#how-it-works">How it works</a></li>
+            <li><a href="https://github.com/jodaaisupport-commits/ai-maker-studio">Source on GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> AI Maker Studio. Demo UI — no real AI calls are made.</span>
+        <a href="#main">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

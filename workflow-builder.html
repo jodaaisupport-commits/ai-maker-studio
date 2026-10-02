@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Workflow Builder — AI Maker Studio</title>
+  <meta name="description" content="Connect triggers, AI steps and actions into automations that run on autopilot.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/script.js"></script>
+</head>
+<body class="theme-workflow">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav-bar">
+      <a class="brand" href="index.html"><img src="assets/img/favicon.svg" alt="" width="32" height="32"> AI Maker Studio</a>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#builders">Builders</a></li>
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="index.html#how-it-works">How it works</a></li>
+          <li><a href="index.html#start">Get started</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle theme">☀️</button>
+        <button class="icon-btn nav-toggle" type="button" data-nav-toggle aria-controls="site-nav" aria-expanded="false" aria-label="Toggle menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="builder-hero" aria-labelledby="page-title">
+      <div class="container builder-hero-inner">
+        <div>
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#builders">Builders</a></li>
+              <li aria-current="page">Workflow Builder</li>
+            </ol>
+          </nav>
+          <span class="builder-icon" aria-hidden="true">⚡</span>
+          <p class="eyebrow">Automation</p>
+          <h1 id="page-title">Workflow <span class="gradient-text">Builder</span></h1>
+          <p class="lead">Automate the busywork. Chain a trigger, AI steps and actions across your favourite apps into workflows that run on autopilot — 24/7.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#workspace">Create a workflow</a>
+            <a class="btn btn-ghost" href="#templates">Automation recipes</a>
+          </div>
+          <ul class="hero-meta">
+            <li>🔗 300+ integrations</li>
+            <li>🧠 AI steps</li>
+            <li>♻️ Retries &amp; logs</li>
+          </ul>
+        </div>
+        <aside class="hero-card" aria-label="Workflow builder at a glance">
+          <h2>At a glance</h2>
+          <dl>
+            <div><dt>Integrations</dt><dd>300+</dd></div>
+            <div><dt>Runs / day</dt><dd>1.2M</dd></div>
+            <div><dt>Uptime</dt><dd>99.9%</dd></div>
+            <div><dt>Hours saved</dt><dd>48k</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section--tight" id="workspace" aria-labelledby="workspace-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">✦ Workspace</p>
+          <h2 id="workspace-title">Design your automation</h2>
+          <p>Choose one trigger, add AI steps and actions, then hit <strong>Test run</strong> to watch data flow through each node.</p>
+        </div>
+
+        <div class="workspace">
+          <form class="panel" data-builder="workflow" data-output="#flow" data-result-tab="tab-canvas" aria-labelledby="config-title">
+            <div class="panel-head"><h3 id="config-title">⚡ Workflow steps</h3><span class="badge">Draft</span></div>
+            <div class="panel-body form-grid">
+              <div class="field">
+                <label for="flowName">Workflow name</label>
+                <input id="flowName" name="flowName" type="text" value="Lead triage">
+              </div>
+              <fieldset>
+                <legend>1 · Trigger</legend>
+                <div class="option-grid">
+                  <label class="option-card"><input type="radio" name="trigger" value="form" checked><span class="emoji" aria-hidden="true">📝</span>Form</label>
+                  <label class="option-card"><input type="radio" name="trigger" value="email"><span class="emoji" aria-hidden="true">📧</span>Email</label>
+                  <label class="option-card"><input type="radio" name="trigger" value="schedule"><span class="emoji" aria-hidden="true">⏰</span>Schedule</label>
+                  <label class="option-card"><input type="radio" name="trigger" value="webhook"><span class="emoji" aria-hidden="true">🪝</span>Webhook</label>
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend>2 · AI steps</legend>
+                <label class="toggle">🧠 Summarize <input type="checkbox" name="aiSteps" value="summarize" checked></label>
+                <label class="toggle">🏷 Classify &amp; tag <input type="checkbox" name="aiSteps" value="classify" checked></label>
+                <label class="toggle">🌍 Translate <input type="checkbox" name="aiSteps" value="translate"></label>
+                <label class="toggle">🔍 Extract data <input type="checkbox" name="aiSteps" value="extract"></label>
+              </fieldset>
+              <fieldset>
+                <legend>3 · Actions</legend>
+                <div class="option-grid">
+                  <label class="option-card"><input type="checkbox" name="actions" value="slack" checked><span class="emoji" aria-hidden="true">💬</span>Slack</label>
+                  <label class="option-card"><input type="checkbox" name="actions" value="sheet"><span class="emoji" aria-hidden="true">📊</span>Sheets</label>
+                  <label class="option-card"><input type="checkbox" name="actions" value="crm" checked><span class="emoji" aria-hidden="true">🤝</span>CRM</label>
+                  <label class="option-card"><input type="checkbox" name="actions" value="notify"><span class="emoji" aria-hidden="true">🔔</span>Notify</label>
+                </div>
+              </fieldset>
+              <div class="field">
+                <label for="retries">On error</label>
+                <select id="retries" name="retries">
+                  <option value="retry3">Retry 3 times, then alert</option>
+                  <option value="skip">Skip step and continue</option>
+                  <option value="stop">Stop workflow</option>
+                </select>
+              </div>
+              <div class="flex-between">
+                <button class="btn btn-ghost btn-sm" type="reset">Reset</button>
+                <button class="btn btn-primary" type="submit">▶ Test run</button>
+              </div>
+            </div>
+          </form>
+
+          <div class="panel" aria-labelledby="preview-title">
+            <div class="panel-head">
+              <span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <h3 id="preview-title">Canvas · <span id="flow-name">Lead triage</span></h3>
+              <span class="badge badge--muted">Auto-saved</span>
+            </div>
+            <div class="panel-body">
+              <div class="status-line" data-status><span class="status-dot"></span><span class="status-text">Ready</span></div>
+              <div class="progress mt-1"><span data-progress></span></div>
+              <div class="tabs mt-1">
+                <div role="tablist" aria-label="Preview views">
+                  <button role="tab" id="tab-canvas" aria-controls="panel-canvas" aria-selected="true" type="button">🗺 Canvas</button>
+                  <button role="tab" id="tab-runs" aria-controls="panel-runs" aria-selected="false" type="button">📜 Run history</button>
+                </div>
+                <div role="tabpanel" id="panel-canvas" aria-labelledby="tab-canvas">
+                  <div class="flow preview-surface" id="flow" aria-live="polite"></div>
+                </div>
+                <div role="tabpanel" id="panel-runs" aria-labelledby="tab-runs" hidden>
+                  <ul class="component-list">
+                    <li><span>#1042 · New lead “Acme GmbH”</span><span class="badge badge--success">Success · 2.1s</span></li>
+                    <li><span>#1041 · New lead “Blue Ocean”</span><span class="badge badge--success">Success · 1.8s</span></li>
+                    <li><span>#1040 · New lead “Nordwind”</span><span class="badge">Retried · 4.6s</span></li>
+                    <li><span>#1039 · New lead “Pixel &amp; Co”</span><span class="badge badge--success">Success · 2.0s</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="templates" aria-labelledby="templates-title">
+      <div class="container">
+        <div class="toolbar">
+          <div>
+            <p class="eyebrow">✦ Templates</p>
+            <h2 id="templates-title">Automation recipes</h2>
+          </div>
+          <div class="chip-group" role="group" aria-label="Filter templates" data-filter-group="#template-grid">
+            <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="chip" type="button" data-filter="sales" aria-pressed="false">Sales</button>
+            <button class="chip" type="button" data-filter="support" aria-pressed="false">Support</button>
+            <button class="chip" type="button" data-filter="reporting" aria-pressed="false">Reporting</button>
+          </div>
+        </div>
+        <div class="grid grid-4" id="template-grid">
+          <article class="card template-card" data-category="sales">
+            <div class="template-thumb" aria-hidden="true">🎯</div>
+            <h3>Lead Triage</h3>
+            <p>Score new leads with AI and route them to sales.</p>
+            <div class="template-meta"><span class="badge badge--muted">Sales</span>
+              <button class="btn btn-ghost btn-sm" type="button" data-template='{"flowName":"Lead triage","trigger":"form","aiSteps":["summarize","classify"],"actions":["slack","crm"]}'>Use</button></div>
+          </article>
+          <article class="card template-card" data-category="support">
+            <div class="template-thumb" aria-hidden="true">📨</div>
+            <h3>Ticket Router</h3>
+            <p>Translate, tag and assign incoming support emails.</p>
+            <div class="template-meta"><span class="badge badge--muted">Support</span>
+              <button class="btn btn-ghost btn-sm" type="button" data-template='{"flowName":"Ticket router","trigger":"email","aiSteps":["translate","classify"],"actions":["notify","sheet"]}'>Use</button></div>
+          </article>
+          <article class="card template-card" data-category="reporting">
+            <div class="template-thumb" aria-hidden="true">📊</div>
+            <h3>Daily Digest</h3>
+            <p>Summarise yesterday’s metrics every morning.</p>
+            <div class="template-meta"><span class="badge badge--muted">Reporting</span>
+              <button class="btn btn-ghost btn-sm" type="button" data-template='{"flowName":"Daily digest","trigger":"schedule","aiSteps":["summarize"],"actions":["slack"]}'>Use</button></div>
+          </article>
+          <article class="card template-card" data-category="sales reporting">
+            <div class="template-thumb" aria-hidden="true">🧾</div>
+            <h3>Invoice Extractor</h3>
+            <p>Pull invoice data from webhooks into a spreadsheet.</p>
+            <div class="template-meta"><span class="badge badge--muted">Finance</span>
+              <button class="btn btn-ghost btn-sm" type="button" data-template='{"flowName":"Invoice extractor","trigger":"webhook","aiSteps":["extract"],"actions":["sheet","notify"]}'>Use</button></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-labelledby="features-title">
+      <div class="container grid grid-2">
+        <div>
+          <p class="eyebrow">✦ Features</p>
+          <h2 id="features-title">Automation that thinks</h2>
+          <p class="muted">Classic if-this-then-that, upgraded with AI reasoning at every step.</p>
+          <ul class="feature-list mt-1">
+            <li>Visual canvas with branches, loops and filters</li>
+            <li>AI steps for summarising, classifying and extracting data</li>
+            <li>300+ app integrations plus custom webhooks</li>
+            <li>Automatic retries, error alerts and full run history</li>
+            <li>Call your agents, prompts and voices from any step</li>
+          </ul>
+        </div>
+        <div class="grid grid-mini">
+          <article class="card"><span class="card-icon" aria-hidden="true">🔀</span><h3>Branches</h3><p>Route data by any condition.</p></article>
+          <article class="card"><span class="card-icon" aria-hidden="true">⏱️</span><h3>Schedules</h3><p>Cron-style timing made easy.</p></article>
+          <article class="card"><span class="card-icon" aria-hidden="true">🧯</span><h3>Error handling</h3><p>Retries &amp; fallbacks built in.</p></article>
+          <article class="card"><span class="card-icon" aria-hidden="true">📡</span><h3>Monitoring</h3><p>Live logs for every run.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="section section--tight" aria-labelledby="related-title">
+      <div class="container">
+        <div class="flex-between related-head">
+          <h2 id="related-title">Explore other builders</h2>
+          <a class="btn btn-ghost btn-sm" href="index.html">← Back to studio home</a>
+        </div>
+        <ul class="related-grid">
+          <li><a href="chatbot-builder.html">💬 Chatbot</a></li>
+          <li><a href="image-builder.html">🎨 Image</a></li>
+          <li><a href="video-builder.html">🎬 Video</a></li>
+          <li><a href="agent-builder.html">🤖 Agent</a></li>
+          <li><a href="prompt-builder.html">✍️ Prompt</a></li>
+          <li><a href="app-builder.html">📱 App</a></li>
+          <li><a href="workflow-builder.html" aria-current="page">⚡ Workflow</a></li>
+          <li><a href="voice-builder.html">🎙️ Voice</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html"><img src="assets/img/favicon.svg" alt="" width="32" height="32"> AI Maker Studio</a>
+          <p class="mt-1">A static showcase of AI builder tools. All demos run locally in your browser.</p>
+        </div>
+        <div>
+          <h2>Builders</h2>
+          <ul class="footer-cols">
+            <li><a href="chatbot-builder.html">Chatbot</a></li>
+            <li><a href="image-builder.html">Image</a></li>
+            <li><a href="video-builder.html">Video</a></li>
+            <li><a href="agent-builder.html">Agent</a></li>
+            <li><a href="prompt-builder.html">Prompt</a></li>
+            <li><a href="app-builder.html">App</a></li>
+            <li><a href="workflow-builder.html">Workflow</a></li>
+            <li><a href="voice-builder.html">Voice</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Studio</h2>
+          <ul>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="index.html#how-it-works">How it works</a></li>
+            <li><a href="https://github.com/jodaaisupport-commits/ai-maker-studio">Source on GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> AI Maker Studio. Demo UI — no real AI calls are made.</span>
+        <a href="#main">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

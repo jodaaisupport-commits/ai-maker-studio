@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prompt Builder — AI Maker Studio</title>
+  <meta name="description" content="Engineer structured, reusable prompts with variables, techniques and quality scoring.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/script.js"></script>
+</head>
+<body class="theme-prompt">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav-bar">
+      <a class="brand" href="index.html"><img src="assets/img/favicon.svg" alt="" width="32" height="32"> AI Maker Studio</a>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#builders">Builders</a></li>
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="index.html#how-it-works">How it works</a></li>
+          <li><a href="index.html#start">Get started</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle theme">☀️</button>
+        <button class="icon-btn nav-toggle" type="button" data-nav-toggle aria-controls="site-nav" aria-expanded="false" aria-label="Toggle menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="builder-hero" aria-labelledby="page-title">
+      <div class="container builder-hero-inner">
+        <div>
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#builders">Builders</a></li>
+              <li aria-current="page">Prompt Builder</li>
+            </ol>
+          </nav>
+          <span class="builder-icon" aria-hidden="true">✍️</span>
+          <p class="eyebrow">Text &amp; chat</p>
+          <h1 id="page-title">Prompt <span class="gradient-text">Builder</span></h1>
+          <p class="lead">Engineer better prompts, faster. Combine role, task, context and constraints into a structured prompt, apply proven techniques and get an instant quality score.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#workspace">Craft a prompt</a>
+            <a class="btn btn-ghost" href="#templates">Prompt library</a>
+          </div>
+          <ul class="hero-meta">
+            <li>🧱 Structured blocks</li>
+            <li>🔤 {{variables}}</li>
+            <li>📊 Live scoring</li>
+          </ul>
+        </div>
+        <aside class="hero-card" aria-label="Prompt builder at a glance">
+          <h2>At a glance</h2>
+          <dl>
+            <div><dt>Library prompts</dt><dd>350</dd></div>
+            <div><dt>Techniques</dt><dd>14</dd></div>
+            <div><dt>Avg. uplift</dt><dd>+31%</dd></div>
+            <div><dt>Models</dt><dd>Any</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section--tight" id="workspace" aria-labelledby="workspace-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">✦ Workspace</p>
+          <h2 id="workspace-title">Compose your prompt</h2>
+          <p>The preview updates live as you type. Use <code>{{variable}}</code> placeholders for reusable inputs.</p>
+        </div>
+
+        <div class="workspace">
+          <form class="panel" data-builder="prompt" data-output="#prompt-output" data-result-tab="tab-prompt" aria-labelledby="config-title">
+            <div class="panel-head"><h3 id="config-title">🧱 Prompt blocks</h3><span class="badge">Live</span></div>
+            <div class="panel-body form-grid">
+              <div class="field">
+                <label for="role">Role</label>
+                <input id="role" name="role" type="text" value="an experienced copywriter for tech start-ups">
+              </div>
+              <div class="field">
+                <label for="task">Task</label>
+                <textarea id="task" name="task" rows="3">Write a landing page headline and three benefit bullets for {{product_name}}, targeting {{audience}}.</textarea>
+              </div>
+              <div class="field">
+                <label for="context">Context</label>
+                <textarea id="context" name="context" rows="2">The product is an AI note-taking app that summarises meetings automatically.</textarea>
+              </div>
+              <div class="field">
+                <label for="constraints">Constraints</label>
+                <input id="constraints" name="constraints" type="text" value="Headline under 10 words. No jargon. Avoid exclamation marks.">
+              </div>
+              <div class="form-row">
+                <div class="field">
+                  <label for="format">Output format</label>
+                  <select id="format" name="format">
+                    <option value="Markdown">Markdown</option>
+                    <option value="JSON">JSON</option>
+                    <option value="plain text">Plain text</option>
+                    <option value="a table">Table</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="ptone">Tone</label>
+                  <select id="ptone" name="ptone">
+                    <option value="confident">Confident</option>
+                    <option value="neutral">Neutral</option>
+                    <option value="warm">Warm</option>
+                    <option value="witty">Witty</option>
+                  </select>
+                </div>
+              </div>
+              <fieldset>
+                <legend>Techniques</legend>
+                <label class="toggle">Chain-of-thought reasoning <input type="checkbox" name="techniques" value="cot" checked></label>
+                <label class="toggle">Few-shot examples <input type="checkbox" name="techniques" value="examples"></label>
+                <label class="toggle">Self-check before answering <input type="checkbox" name="techniques" value="selfcheck" checked></label>
+              </fieldset>
+              <div class="flex-between">
+                <button class="btn btn-ghost btn-sm" type="reset">Reset</button>
+                <button class="btn btn-primary" type="submit">✨ Optimize prompt</button>
+              </div>
+            </div>
+          </form>
+
+          <div class="panel" aria-labelledby="preview-title">
+            <div class="panel-head">
+              <span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <h3 id="preview-title">Output preview</h3>
+              <button class="btn btn-ghost btn-sm" type="button" data-copy="#prompt-output">Copy prompt</button>
+            </div>
+            <div class="panel-body">
+              <div class="status-line" data-status><span class="status-dot"></span><span class="status-text">Ready · updating live</span></div>
+              <div class="progress mt-1"><span data-progress></span></div>
+              <div class="tabs mt-1">
+                <div role="tablist" aria-label="Preview views">
+                  <button role="tab" id="tab-prompt" aria-controls="panel-prompt" aria-selected="true" type="button">📝 Prompt</button>
+                  <button role="tab" id="tab-test" aria-controls="panel-test" aria-selected="false" type="button">🧪 Test run</button>
+                </div>
+                <div role="tabpanel" id="panel-prompt" aria-labelledby="tab-prompt">
+                  <div class="preview-surface prompt-output" id="prompt-output" aria-live="polite"></div>
+                  <div class="score-grid">
+                    <div class="score"><span>Tokens</span><strong id="score-tokens">–</strong></div>
+                    <div class="score"><span>Clarity</span><strong id="score-clarity">–</strong></div>
+                    <div class="score"><span>Variables</span><strong id="score-vars">–</strong></div>
+                    <div class="score"><span>Est. cost</span><strong id="score-cost">–</strong></div>
+                  </div>
+                </div>
+                <div role="tabpanel" id="panel-test" aria-labelledby="tab-test" hidden>
+                  <div class="preview-surface">
+                    <p><span class="badge">Sample model answer</span></p>
+                    <h3>Never take meeting notes again</h3>
+                    <ul class="feature-list">
+                      <li>Automatic summaries the moment your call ends</li>
+                      <li>Action items assigned to the right people</li>
+                      <li>Search every meeting like your inbox</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="templates" aria-labelledby="templates-title">
+      <div class="container">
+        <div class="toolbar">
+          <div>
+            <p class="eyebrow">✦ Templates</p>
+            <h2 id="templates-title">Prompt library</h2>
+          </div>
+          <div class="chip-group" role="group" aria-label="Filter templates" data-filter-group="#template-grid">
+            <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="chip" type="button" data-filter="writing" aria-pressed="false">Writing</button>
+            <button class="chip" type="button" data-filter="code" aria-pressed="false">Code</button>
+            <button class="chip" type="button" data-filter="analysis" aria-pressed="false">Analysis</button>
+          </div>
+        </div>
+        <div class="grid grid-4" id="template-grid">
+          <article class="card template-card" data-category="writing">
+            <div class="template-thumb" aria-hidden="true">📰</div>
+            <h3>Blog Outline</h3>
+            <p>SEO-friendly outlines with headings and key points.</p>
+            <div class="template-meta"><span class="badge badge--muted">Writing</span>
+              <button class="btn btn-ghost btn-sm" type="button" data-template='{"role":"a senior content strategist","task":"Create a detailed blog outline about {{topic}} for {{audience}}.","context":"The blog targets organic search traffic.","constraints":"Use H2/H3 headings. Include a meta description under 155 characters.","format":"Markdown","ptone":"warm","techniques":["selfcheck"]}'>Use</button></div>
+          </article>
+          <article class="card template-card" data-category="code">
+            <div class="template-thumb" aria-hidden="true">🧑‍💻</div>
+            <h3>Code Reviewer</h3>
+            <p>Thorough reviews with severity labels and fixes.</p>
+            <div class="template-meta"><span class="badge badge--muted">Code</span>
+              <button class="btn btn-ghost btn-sm" type="button" data-template='{"role":"a meticulous senior software engineer","task":"Review the following {{language}} code and list bugs, security issues and improvements:\n{{code}}","context":"","constraints":"Rate each finding as low, medium or high severity.","format":"a table","ptone":"neutral","techniques":["cot","selfcheck"]}'>Use</button></div>
+          </article>
+          <article class="card template-card" data-category="analysis">
+            <div class="template-thumb" aria-hidden="true">📈</div>
+            <h3>Data Analyst</h3>
+            <p>Turns raw numbers into insights and next steps.</p>
+            <div class="template-meta"><span class="badge badge--muted">Analysis</span>
+              <button class="btn btn-ghost btn-sm" type="button" data-template='{"role":"a data analyst who explains things simply","task":"Analyse this dataset and highlight the 3 most important trends: {{data}}","context":"The audience is a non-technical leadership team.","constraints":"Max 150 words. Include one recommended action.","format":"JSON","ptone":"confident","techniques":["cot","examples"]}'>Use</button></div>
+          </article>
+          <article class="card template-card" data-category="writing analysis">
+            <div class="template-thumb" aria-hidden="true">📧</div>
+            <h3>Email Rewriter</h3>
+            <p>Polishes drafts into clear, friendly emails.</p>
+            <div class="template-meta"><span class="badge badge--muted">Writing</span>
+              <button class="btn btn-ghost btn-sm" type="button" data-template='{"role":"an executive communications coach","task":"Rewrite this email to be clearer and kinder: {{draft}}","context":"The recipient is {{recipient_role}}.","constraints":"Keep it under 120 words.","format":"plain text","ptone":"warm","techniques":["examples"]}'>Use</button></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-labelledby="features-title">
+      <div class="container grid grid-2">
+        <div>
+          <p class="eyebrow">✦ Features</p>
+          <h2 id="features-title">Prompt engineering, simplified</h2>
+          <p class="muted">Write once, reuse everywhere — across every model and builder.</p>
+          <ul class="feature-list mt-1">
+            <li>Block-based editor for role, task, context and constraints</li>
+            <li>Reusable <code>{{variables}}</code> with test datasets</li>
+            <li>A/B testing across models with side-by-side output</li>
+            <li>Version history and team prompt library</li>
+            <li>Export to any builder, API call or JSON file</li>
+          </ul>
+        </div>
+        <div class="grid grid-mini">
+          <article class="card"><span class="card-icon" aria-hidden="true">🧪</span><h3>A/B tests</h3><p>Compare prompts objectively.</p></article>
+          <article class="card"><span class="card-icon" aria-hidden="true">🕰️</span><h3>Versions</h3><p>Roll back with one click.</p></article>
+          <article class="card"><span class="card-icon" aria-hidden="true">📏</span><h3>Scoring</h3><p>Clarity &amp; cost estimates.</p></article>
+          <article class="card"><span class="card-icon" aria-hidden="true">🤝</span><h3>Sharing</h3><p>Team-wide prompt library.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="section section--tight" aria-labelledby="related-title">
+      <div class="container">
+        <div class="flex-between related-head">
+          <h2 id="related-title">Explore other builders</h2>
+          <a class="btn btn-ghost btn-sm" href="index.html">← Back to studio home</a>
+        </div>
+        <ul class="related-grid">
+          <li><a href="chatbot-builder.html">💬 Chatbot</a></li>
+          <li><a href="image-builder.html">🎨 Image</a></li>
+          <li><a href="video-builder.html">🎬 Video</a></li>
+          <li><a href="agent-builder.html">🤖 Agent</a></li>
+          <li><a href="prompt-builder.html" aria-current="page">✍️ Prompt</a></li>
+          <li><a href="app-builder.html">📱 App</a></li>
+          <li><a href="workflow-builder.html">⚡ Workflow</a></li>
+          <li><a href="voice-builder.html">🎙️ Voice</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html"><img src="assets/img/favicon.svg" alt="" width="32" height="32"> AI Maker Studio</a>
+          <p class="mt-1">A static showcase of AI builder tools. All demos run locally in your browser.</p>
+        </div>
+        <div>
+          <h2>Builders</h2>
+          <ul class="footer-cols">
+            <li><a href="chatbot-builder.html">Chatbot</a></li>
+            <li><a href="image-builder.html">Image</a></li>
+            <li><a href="video-builder.html">Video</a></li>
+            <li><a href="agent-builder.html">Agent</a></li>
+            <li><a href="prompt-builder.html">Prompt</a></li>
+            <li><a href="app-builder.html">App</a></li>
+            <li><a href="workflow-builder.html">Workflow</a></li>
+            <li><a href="voice-builder.html">Voice</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Studio</h2>
+          <ul>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="index.html#how-it-works">How it works</a></li>
+            <li><a href="https://github.com/jodaaisupport-commits/ai-maker-studio">Source on GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> AI Maker Studio. Demo UI — no real AI calls are made.</span>
+        <a href="#main">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
